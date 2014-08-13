@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  default_url_options :host => "example.com"
+  default_url_options :host => 'localhost:3000'
 
-  root :to => 'users#index'
+  root :to => 'users#index' 
   resources :user_sessions
   resources :users
   resources :password_resets
