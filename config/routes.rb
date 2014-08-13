@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  default_url_options :host => "example.com"
 
   root :to => 'users#index'
   resources :user_sessions
