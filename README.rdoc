@@ -11,7 +11,7 @@ This is a pro-bono project for a friend that is starting a sustainable palm oil 
 
 ==Specs
 
-* Made with Ruby on Rails(infrastructure) and Firebase(real time game play, chatting and invitation)
+* Made with Ruby on Rails(infrastructure) 
 
 * TDD development for data model, crafted using Rspec, FactoryGirl and Faker
 
