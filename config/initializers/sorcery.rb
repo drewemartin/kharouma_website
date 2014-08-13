@@ -1,5 +1,5 @@
 
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules = [:reset_password]
 
 Rails.application.config.sorcery.configure do |config|
   
