@@ -5,7 +5,7 @@ This is a pro-bono project for a friend that is starting a sustainable palm oil 
 
 ==Functionality Highlights
 
-* User authentication and password reset (powered by socery gem)
+* User authentication and password reset (powered by Sorcery gem)
 
 * Action mailer for password reset (supported by Mandrill)
 
