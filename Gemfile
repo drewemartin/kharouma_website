@@ -13,3 +13,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'sorcery'
+
+group :development, :test  do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'sqlite3'
+  gem 'database_cleaner'
+  gem 'pry-rails'
+  
+end
+
