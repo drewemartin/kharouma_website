@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @article.body %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Last editor:</strong>
+  <%= @article.last_editor %>
+</p>
+
+<p>
+  <strong>Publish location:</strong>
+  <%= @article.publish_location %>
+</p>
+
+<p>
+  <strong>Publish now:</strong>
+  <%= @article.publish_now %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @article.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :articles
+
   default_url_options :host => 'localhost:3000'
 
   root :to => 'users#index' 
