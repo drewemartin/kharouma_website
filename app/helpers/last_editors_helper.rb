@@ -1,0 +1,2 @@
+module LastEditorsHelper
+end

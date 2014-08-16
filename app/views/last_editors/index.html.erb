@@ -1,0 +1,27 @@
+<h1>Listing last_editors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Article</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @last_editors.each do |last_editor| %>
+      <tr>
+        <td><%= last_editor.user_id %></td>
+        <td><%= last_editor.article_id %></td>
+        <td><%= link_to 'Show', last_editor %></td>
+        <td><%= link_to 'Edit', edit_last_editor_path(last_editor) %></td>
+        <td><%= link_to 'Destroy', last_editor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Last editor', new_last_editor_path %>
