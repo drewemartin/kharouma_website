@@ -7,10 +7,6 @@ class Article < ActiveRecord::Base
   validates :title, presence: true
   validate :maximum_title_length
 
-  validate :last_editor_cannot_be_empty_string
-
-  validates :publish_now, presence: true
-
   private
   def maximum_body_length
     if body.nil? != true && body.length > 65536
@@ -23,12 +19,5 @@ class Article < ActiveRecord::Base
       errors.add(:title, 'must be shorter')
     end
   end
-
-  def last_editor_cannot_be_empty_string
-    if last_editor != nil && last_editor == ''
-      errors.add(:last_editor, 'can either be blank or a selection')
-    end
-  end
-
   
 end
