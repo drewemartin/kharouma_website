@@ -7,7 +7,9 @@ class Article < ActiveRecord::Base
   validates :title, presence: true
   validate :maximum_title_length
 
+  validates :type, presence: true
   validate :type_is_either_project_or_update
+  validates :show_on_homepage, presence: true
   validate :show_on_homepage_is_either_yes_or_no
 
   private
@@ -24,14 +26,18 @@ class Article < ActiveRecord::Base
   end
 
   def type_is_either_project_or_update
-    if type != 'update'.downcase && type != 'project'.downcase
-      errors.add(:type, 'it must either be a project or an update')
-    end
+    unless type == nil
+      if type.downcase != 'update' && type.downcase != 'project'
+        errors.add(:type, 'it must either be a project or an update')
+      end
+    end    
   end
 
   def show_on_homepage_is_either_yes_or_no
-    if show_on_homepage != 'yes'.downcase && show_on_homepage != 'no'.downcase
-      errors.add(:type, 'it must either be a project or an update')
+    unless show_on_homepage == nil
+      if show_on_homepage.downcase != 'yes' && show_on_homepage.downcase != 'no'
+        errors.add(:type, 'it must either be a project or an update')
+      end
     end
   end
   
