@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'updates/index'
+
+  get 'updates/show'
+
   get 'projects/index'
 
   get 'projects/show'
