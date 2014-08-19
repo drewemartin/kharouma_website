@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'projects/index'
+
+  get 'projects/show'
+
+  get 'project/show'
+
+  get 'project/index'
+
   resources :last_editors
 
   resources :articles
