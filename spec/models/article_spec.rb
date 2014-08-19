@@ -39,6 +39,30 @@ describe Article do
     #can be run after changing factory
     #will clash w/ 1st test
 
+    it 'should only accept project or update values for type' do
+      expect(FactoryGirl.build(:article, type:'something')).to_not be_valid
+    end
+
+    it 'should not have an empty value for type' do 
+      expect(FactoryGirl.build(:article, type:nil)).to_not be_valid
+    end
+
+    it 'should only accept project or update values for type' do
+      expect(FactoryGirl.build(:article, type:'update')).to be_valid
+    end
+
+    it 'should not have an empty value for show_on_homepage' do
+      expect(FactoryGirl.build(:article, show_on_homepage:nil)).to_not be_valid
+    end
+
+    it 'should only have yes or no values for show_on_homepage' do
+      expect(FactoryGirl.build(:article, show_on_homepage:'something')).to_not be_valid
+    end
+
+    it 'should only have yes or no values for show_on_homepage' do
+      expect(FactoryGirl.build(:article, show_on_homepage:'yes')).to be_valid
+    end
+
   end
 
   context "as for association" do

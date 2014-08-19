@@ -7,6 +7,9 @@ class Article < ActiveRecord::Base
   validates :title, presence: true
   validate :maximum_title_length
 
+  validate :type_is_either_project_or_update
+  validate :show_on_homepage_is_either_yes_or_no
+
   private
   def maximum_body_length
     if body.nil? != true && body.length > 65536
@@ -19,5 +22,18 @@ class Article < ActiveRecord::Base
       errors.add(:title, 'must be shorter')
     end
   end
+
+  def type_is_either_project_or_update
+    if type != 'update'.downcase && type != 'project'.downcase
+      errors.add(:type, 'it must either be a project or an update')
+    end
+  end
+
+  def show_on_homepage_is_either_yes_or_no
+    if show_on_homepage != 'yes'.downcase && show_on_homepage != 'no'.downcase
+      errors.add(:type, 'it must either be a project or an update')
+    end
+  end
+  
   
 end

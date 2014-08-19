@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140819200935) do
+ActiveRecord::Schema.define(version: 20140819202002) do
 
   create_table "articles", force: true do |t|
     t.text     "body"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140819200935) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
+    t.string   "show_on_homepage"
   end
 
   create_table "last_editors", force: true do |t|
